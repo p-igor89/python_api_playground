@@ -2,20 +2,24 @@ import json
 
 import requests
 
+from scr.response import AssertableResponse
+
 
 class ApiService(object):
 
     def __init__(self):
         pass
 
+    def _post(self, url, body):
+        return requests.post(f"http://0.0.0.0{url}",
+                             data=json.dumps(body),
+                             headers={'content-type': 'application/json'})
+
 
 class UserApiService(ApiService):
 
-    def __init__(self):
-        super.__init__()
+    def __init__(self) -> None:
+        super().__init__()
 
-    @staticmethod
-    def create_user(user: dict) -> requests.Response:
-        return requests.post('http://0.0.0.0/register',
-                             data=json.dumps(user),
-                             headers={'content-type': 'application/json'})
+    def create_user(self, user: dict):
+        return AssertableResponse(self._post("/register", user))
