@@ -1,4 +1,5 @@
 import json
+import os
 
 import requests
 
@@ -8,10 +9,10 @@ from scr.response import AssertableResponse
 class ApiService(object):
 
     def __init__(self):
-        pass
+        self._base_url = os.environ['BASE_URL']
 
     def _post(self, url, body):
-        return requests.post(f"http://0.0.0.0{url}",
+        return requests.post(f"{self._base_url}" + url,
                              data=json.dumps(body),
                              headers={'content-type': 'application/json'})
 
