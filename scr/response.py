@@ -9,6 +9,7 @@ class AssertableResponse(object):
         self.response = response
 
     def status_code(self, code):
+        logging.info("Assert: status code should be {}".format(code))
         return self.response.status_code == code
 
     def field(self, name):
