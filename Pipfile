@@ -8,6 +8,7 @@ pytest = "*"
 requests = "*"
 faker = "*"
 pytest-env = "*"
+allure-pytest = "*"
 
 [dev-packages]
 

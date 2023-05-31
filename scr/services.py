@@ -1,6 +1,6 @@
 import json
 import os
-
+import allure
 import requests
 
 from scr.response import AssertableResponse
@@ -22,5 +22,6 @@ class UserApiService(ApiService):
     def __init__(self) -> None:
         super().__init__()
 
+    @allure.step
     def create_user(self, user: dict):
         return AssertableResponse(self._post("/register", user))
