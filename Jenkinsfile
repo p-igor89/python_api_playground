@@ -1,5 +1,5 @@
 node {
-    stage('Checkout repo'){
+    stage('Checkout repo') {
         git branch: 'main',
         credentialsId: 'e047276c-9e29-460a-9cd5-27aec0be5fd3',
         url: 'https://github.com/p-igor89/python_api_playground.git'
@@ -8,6 +8,7 @@ node {
         steps {
             sh 'pip install --upgrade pip'
             sh 'pip install python'
+        }
     }
     stage('Install deps') {
         sh 'pipenv install'
@@ -15,15 +16,15 @@ node {
     stage('Test') {
         sh 'pipenv run pytest tests -sv --alluredir=allure-results'
     }
-    stage('Report'){
+    stage('Report') {
         script {
-                allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'allure_results']]
-                ])
+            allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'allure_results']]
+            ])
         }
     }
 }
