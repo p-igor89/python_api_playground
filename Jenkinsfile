@@ -1,7 +1,7 @@
 node {
     stage('Checkout repo'){
         git branch: 'main',
-        credentialsId: '5f6c5fab-317c-4294-9373-37615052c667',
+        credentialsId: 'e047276c-9e29-460a-9cd5-27aec0be5fd3',
         url: 'https://github.com/p-igor89/python_api_playground.git'
     }
     stage('Install deps') {
