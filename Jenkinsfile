@@ -8,7 +8,7 @@ node {
         steps {
             sh 'pip install --upgrade pip'
             sh 'pip install python'
-        }
+    }
     stage('Install deps') {
         sh 'pipenv install'
     }
