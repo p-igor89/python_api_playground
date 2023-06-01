@@ -9,6 +9,8 @@ requests = "*"
 faker = "*"
 pytest-env = "*"
 allure-pytest = "*"
+jsonpath-rw = "*"
+pyhamcrest = "*"
 
 [dev-packages]
 
