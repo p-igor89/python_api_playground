@@ -1,7 +1,8 @@
-from scr.conditions import status_code, body
-from scr.services import UserApiService
 from hamcrest import has_length, greater_than
 from faker import Faker
+
+from src.conditions import status_code, body
+from src.services import UserApiService
 
 
 def test_can_register_user_with_valid_credentials(faker: Faker) -> None:

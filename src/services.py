@@ -3,7 +3,7 @@ import os
 import allure
 import requests
 
-from scr.response import AssertableResponse
+from src.response import AssertableResponse
 from typing import Dict
 
 
