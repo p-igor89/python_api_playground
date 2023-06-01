@@ -1,0 +1,4 @@
+.pytest_cache
+allure/
+allure_results/
+.idea
