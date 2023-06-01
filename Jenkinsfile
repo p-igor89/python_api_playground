@@ -4,9 +4,6 @@ node {
         credentialsId: 'e047276c-9e29-460a-9cd5-27aec0be5fd3',
         url: 'https://github.com/p-igor89/python_api_playground.git'
     }
-    stage('Install Python') {
-        sh 'pip install python3'
-    }
     stage('Install deps') {
         sh 'pipenv install'
     }
