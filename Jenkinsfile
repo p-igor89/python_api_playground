@@ -6,7 +6,6 @@ node {
     }
     stage('Install pyenv and Python') {
         sh '''
-            rm -rf ~/.pyenv
             curl https://pyenv.run | bash
             echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
             echo 'eval "$(pyenv init -)"' >> ~/.bashrc
