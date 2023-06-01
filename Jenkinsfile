@@ -1,6 +1,6 @@
 node {
     stage('Checkout repo'){
-        git branch: 'master',
+        git branch: 'main',
         credentialsId: '5f6c5fab-317c-4294-9373-37615052c667',
         url: 'https://github.com/p-igor89/python_api_playground.git'
     }
