@@ -9,11 +9,8 @@ class AssertableResponse(object):
         logging.info("Response: \n status={} \n body={}".format(response.status_code, response.text))
         self.response = response
 
-    @allure.step('Status code should be "{code}"')
-    def status_code(self, code):
-        logging.info("Assert: status code should be {}".format(code))
-        return self.response.status_code == code
-
-    @allure.step
-    def field(self, name):
-        return self.response.json()[name]
+    @allure.step('Response should have {condition}')
+    def should_have(self, condition):
+        logging.info('About to check ' + str(condition))
+        condition.match(self.response)
+        return self
