@@ -3,5 +3,5 @@ from faker import Faker
 
 
 @pytest.fixture
-def faker():
+def faker() -> Faker:
     return Faker()
