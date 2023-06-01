@@ -5,7 +5,7 @@ node {
         url: 'https://github.com/p-igor89/python_api_playground.git'
     }
     stage('Install deps') {
-        sg 'pipenv install'
+        sh 'pipenv install'
     }
     stage('Test') {
         sh 'pipenv run pytest tests -sv --alluredir-allure-results'
