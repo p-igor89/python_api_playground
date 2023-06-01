@@ -1,15 +1,16 @@
 import logging
+from typing import TypeVar
+
 import allure
 from requests import Response
-from typing import TypeVar
 
 
 class AssertableResponse:
     T = TypeVar('T', bound='AssertableResponse')
 
     def __init__(self, response: Response) -> None:
-        logging.info(f"Request:\nurl={response.request.url}\nbody={response.request.body}")
-        logging.info(f"Response:\nstatus={response.status_code}\nbody={response.text}")
+        logging.info("Request: \n url={} \n body={}".format(response.request.url, response.request.body))
+        logging.info("Response: \n status={} \n body={}".format(response.status_code, response.text))
         self.response = response
 
     @allure.step('Response should have {condition}')
