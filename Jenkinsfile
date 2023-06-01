@@ -8,7 +8,7 @@ node {
         sh 'pipenv install'
     }
     stage('Test') {
-        sh 'pipenv run pytest tests -sv --alluredir-allure-results'
+        sh 'pipenv run pytest tests -sv --alluredir=allure-results'
     }
     stage('Report'){
         script {
