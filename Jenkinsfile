@@ -5,7 +5,7 @@ node {
         url: 'https://github.com/p-igor89/python_api_playground.git'
     }
     stage('Install Python') {
-        sh 'pip install python'
+        sh 'pip install python3'
     }
     stage('Install deps') {
         sh 'pipenv install'
